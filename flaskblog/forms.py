@@ -5,6 +5,7 @@ from flaskblog.models import User
 from flask_login import current_user
 from flask_wtf.file import FileField, FileAllowed
 
+
 class RegistrationForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=2, max=20)])
@@ -62,7 +63,7 @@ class PostForm(FlaskForm):
     submit = SubmitField('Post')
 
 
-class RequestResetForM(FlaskForm):
+class RequestResetForm(FlaskForm):
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
     submit = SubmitField('Request password reset')
